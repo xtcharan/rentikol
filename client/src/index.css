@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+  }
+}
+
+@layer utilities {
+  .bg-flickBlue-dark {
+    @apply bg-blue-900;
+  }
+  
+  .bg-flickBlue {
+    @apply bg-blue-600;
+  }
+  
+  .bg-flickBlue-light {
+    @apply bg-blue-500;
+  }
+  
+  .bg-flickGreen {
+    @apply bg-green-500;
+  }
+  
+  .bg-flickGreen-dark {
+    @apply bg-green-700;
+  }
+  
+  .bg-flickRed {
+    @apply bg-red-500;
+  }
+  
+  .text-flickBlue-dark {
+    @apply text-blue-900;
+  }
+  
+  .text-flickBlue {
+    @apply text-blue-600;
+  }
+  
+  .text-flickGreen {
+    @apply text-green-500;
+  }
+  
+  .text-flickGreen-dark {
+    @apply text-green-700;
+  }
+  
+  .text-flickRed {
+    @apply text-red-500;
+  }
+  
+  .border-flickBlue {
+    @apply border-blue-600;
+  }
+  
+  .hover\:bg-flickBlue:hover {
+    @apply hover:bg-blue-600;
+  }
+  
+  .hover\:bg-flickBlue-dark:hover {
+    @apply hover:bg-blue-900;
+  }
+  
+  .hover\:bg-flickGreen:hover {
+    @apply hover:bg-green-500;
+  }
+  
+  .hover\:bg-flickGreen-dark:hover {
+    @apply hover:bg-green-700;
+  }
+  
+  .hover\:text-flickBlue:hover {
+    @apply hover:text-blue-600;
+  }
+  
+  .hover\:text-flickBlue-dark:hover {
+    @apply hover:text-blue-900;
+  }
+  
+  .hover\:text-flickGreen:hover {
+    @apply hover:text-green-500;
+  }
+
+  .dropdown-menu {
+    display: none;
+  }
+  
+  .group:hover .dropdown-menu {
+    display: block;
+  }
+}
