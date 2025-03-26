@@ -1,8 +1,34 @@
 import { Link } from 'wouter';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+import ServiceCard from '@/components/disinfection/ServiceCard';
+import BenefitCard from '@/components/disinfection/BenefitCard';
+import SectorCard from '@/components/disinfection/SectorCard';
+import PartnerLogo from '@/components/disinfection/PartnerLogo';
+import Testimonial from '@/components/disinfection/Testimonial';
 
 export default function DisinfectionServices() {
+  const services = [
+    {
+      id: 1,
+      title: "Pest control services",
+      description: "Whether residential or commercial, we create tailored solutions to meet your pest control needs with systematic treatments and expert advice.",
+      imageUrl: "https://images.unsplash.com/photo-1584351795875-71bae3d4748f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80"
+    },
+    {
+      id: 2,
+      title: "Digital pest control",
+      description: "A range of innovative digital solutions with state-of-the-art technology provides continuous monitoring and protection against pests.",
+      imageUrl: "https://images.unsplash.com/photo-1584698919411-65a60f474beb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80"
+    },
+    {
+      id: 3,
+      title: "Lumnia Insect Light",
+      description: "Revolutionary technology for protection against flying insects, utilizing UV-LED technology for efficient, discreet, and power-saving solutions.",
+      imageUrl: "https://images.unsplash.com/photo-1612914082716-7475374517ee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80"
+    }
+  ];
+
   const industrySectors = [
     { id: 1, name: "Manufacturing", icon: "🏭" },
     { id: 2, name: "Healthcare", icon: "🏥" },
@@ -80,62 +106,14 @@ export default function DisinfectionServices() {
         <section className="bg-white py-12">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Service 1 */}
-              <div className="relative overflow-hidden rounded-lg shadow-lg h-[400px] group">
-                <img 
-                  src="https://images.unsplash.com/photo-1584351795875-71bae3d4748f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80" 
-                  alt="Pest control service" 
-                  className="w-full h-full object-cover"
+              {services.map(service => (
+                <ServiceCard 
+                  key={service.id}
+                  title={service.title}
+                  description={service.description}
+                  imageUrl={service.imageUrl}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <h3 className="text-xl font-bold text-white mb-2">Pest control services</h3>
-                  <p className="text-gray-200 text-sm mb-4">
-                    Whether residential or commercial, we create tailored solutions to meet your pest control needs with systematic treatments and expert advice.
-                  </p>
-                  <button className="bg-white text-flickBlue-dark hover:bg-gray-100 px-4 py-2 rounded text-sm font-medium transition duration-300">
-                    Find out more
-                  </button>
-                </div>
-              </div>
-              
-              {/* Service 2 */}
-              <div className="relative overflow-hidden rounded-lg shadow-lg h-[400px] group">
-                <img 
-                  src="https://images.unsplash.com/photo-1584698919411-65a60f474beb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80" 
-                  alt="Digital pest control" 
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <h3 className="text-xl font-bold text-white mb-2">Digital pest control</h3>
-                  <p className="text-gray-200 text-sm mb-4">
-                    A range of innovative digital solutions with state-of-the-art technology provides continuous monitoring and protection against pests.
-                  </p>
-                  <button className="bg-white text-flickBlue-dark hover:bg-gray-100 px-4 py-2 rounded text-sm font-medium transition duration-300">
-                    Find out more
-                  </button>
-                </div>
-              </div>
-              
-              {/* Service 3 */}
-              <div className="relative overflow-hidden rounded-lg shadow-lg h-[400px] group">
-                <img 
-                  src="https://images.unsplash.com/photo-1612914082716-7475374517ee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80" 
-                  alt="Lumnia Insect Light" 
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <h3 className="text-xl font-bold text-white mb-2">Lumnia Insect Light</h3>
-                  <p className="text-gray-200 text-sm mb-4">
-                    Revolutionary technology for protection against flying insects, utilizing UV-LED technology for efficient, discreet, and power-saving solutions.
-                  </p>
-                  <button className="bg-white text-flickBlue-dark hover:bg-gray-100 px-4 py-2 rounded text-sm font-medium transition duration-300">
-                    Find out more
-                  </button>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>
@@ -152,11 +130,12 @@ export default function DisinfectionServices() {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
               {benefits.map(benefit => (
-                <div key={benefit.id} className="flex flex-col items-center">
-                  <div className="text-flickRed text-5xl mb-4">{benefit.icon}</div>
-                  <h3 className="text-lg font-bold text-gray-800 mb-2">{benefit.title}</h3>
-                  <p className="text-gray-600 text-sm">{benefit.description}</p>
-                </div>
+                <BenefitCard 
+                  key={benefit.id} 
+                  icon={benefit.icon}
+                  title={benefit.title}
+                  description={benefit.description}
+                />
               ))}
             </div>
             
@@ -175,10 +154,11 @@ export default function DisinfectionServices() {
             
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-4xl mx-auto mb-12">
               {industrySectors.map(sector => (
-                <div key={sector.id} className="flex flex-col items-center p-4 hover:bg-gray-50 rounded-lg transition duration-300 cursor-pointer">
-                  <div className="text-4xl mb-3">{sector.icon}</div>
-                  <span className="text-sm font-medium text-gray-700">{sector.name}</span>
-                </div>
+                <SectorCard 
+                  key={sector.id} 
+                  icon={sector.icon} 
+                  name={sector.name} 
+                />
               ))}
             </div>
           </div>
@@ -196,9 +176,11 @@ export default function DisinfectionServices() {
             
             <div className="flex flex-wrap justify-center gap-8 mb-8">
               {partners.map(partner => (
-                <div key={partner.id} className="flex items-center justify-center">
-                  <img src={partner.logo} alt={partner.name} className="h-12" />
-                </div>
+                <PartnerLogo 
+                  key={partner.id} 
+                  logo={partner.logo} 
+                  name={partner.name} 
+                />
               ))}
             </div>
           </div>
@@ -207,13 +189,13 @@ export default function DisinfectionServices() {
         {/* Testimonial */}
         <section className="bg-white py-16">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto bg-gray-50 p-8 rounded-lg border-l-4 border-flickRed">
-              <blockquote className="text-gray-700 italic mb-4">
-                "Flick's comprehensive disinfection service provided us with a safer workplace during the pandemic. Their attention to detail and thorough approach gave us peace of mind that our facility was properly sanitized."
-              </blockquote>
-              <div className="font-medium text-gray-900">
-                — Jane Peterson, Head of Facilities, Coastal Industries
-              </div>
+            <div className="max-w-3xl mx-auto">
+              <Testimonial 
+                quote="Flick's comprehensive disinfection service provided us with a safer workplace during the pandemic. Their attention to detail and thorough approach gave us peace of mind that our facility was properly sanitized."
+                author="Jane Peterson"
+                position="Head of Facilities"
+                company="Coastal Industries"
+              />
             </div>
           </div>
         </section>
