@@ -99,9 +99,9 @@ export default function Navbar() {
                 </div>
 
                 <div className="relative group">
-                  <a href="#" className="px-3 py-4 text-gray-700 hover:text-flickBlue flex items-center transition duration-150 ease-in-out">
+                  <Link href="/disinfection-services" className="px-3 py-4 text-gray-700 hover:text-flickBlue flex items-center transition duration-150 ease-in-out">
                     <i className="fas fa-spray-can mr-2"></i> DISINFECTION SERVICES
-                  </a>
+                  </Link>
                 </div>
 
                 <div className="relative group">
@@ -146,9 +146,9 @@ export default function Navbar() {
                 <a href="#" className="px-3 py-2 text-gray-700 hover:text-flickBlue flex items-center transition duration-150 ease-in-out">
                   <i className="fas fa-bug mr-2"></i> PEST INFORMATION
                 </a>
-                <a href="#" className="px-3 py-2 text-gray-700 hover:text-flickBlue flex items-center transition duration-150 ease-in-out">
+                <Link href="/disinfection-services" className="px-3 py-2 text-gray-700 hover:text-flickBlue flex items-center transition duration-150 ease-in-out">
                   <i className="fas fa-spray-can mr-2"></i> DISINFECTION SERVICES
-                </a>
+                </Link>
                 <a href="#" className="px-3 py-2 text-gray-700 hover:text-flickBlue flex items-center transition duration-150 ease-in-out">
                   <i className="fas fa-info-circle mr-2"></i> ABOUT US
                 </a>
