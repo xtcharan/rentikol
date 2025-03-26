@@ -1,9 +1,11 @@
 interface ServiceCardProps {
   title: string;
   description: string;
-  imageUrl: string;
+  imageUrl?: string;
   buttonText?: string;
   buttonLink?: string;
+  bgColor?: string;
+  hasImage?: boolean;
 }
 
 export default function ServiceCard({ 
@@ -11,22 +13,19 @@ export default function ServiceCard({
   description, 
   imageUrl, 
   buttonText = "Find out more", 
-  buttonLink = "#" 
+  buttonLink = "#",
+  bgColor = "white",
+  hasImage = false
 }: ServiceCardProps) {
+  // The design from the reference image shows a white card with text content
   return (
-    <div className="relative overflow-hidden rounded-lg shadow-lg h-[400px] group">
-      <img 
-        src={imageUrl}
-        alt={title} 
-        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
-      <div className="absolute bottom-0 left-0 right-0 p-6">
-        <h3 className="text-xl font-bold text-white mb-2">{title}</h3>
-        <p className="text-gray-200 text-sm mb-4">{description}</p>
+    <div className={`bg-${bgColor} p-4 border border-gray-200 h-full flex flex-col`}>
+      <h3 className="text-lg font-semibold text-red-600 mb-2">{title}</h3>
+      <p className="text-gray-700 text-sm mb-4 flex-grow">{description}</p>
+      <div>
         <a 
           href={buttonLink} 
-          className="inline-block bg-white text-flickBlue-dark hover:bg-gray-100 px-4 py-2 rounded text-sm font-medium transition duration-300"
+          className="inline-block border border-gray-300 text-gray-700 hover:bg-gray-50 px-4 py-1.5 text-sm font-medium transition-colors"
         >
           {buttonText}
         </a>
